@@ -1,26 +1,52 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import AuthView from "@/views/auth/AuthView.vue";
+import AuthLoginView from "@/views/auth/AuthLoginView.vue";
+import AuthRegisterView from "@/views/auth/AuthRegisterView.vue";
+import AppView from "@/views/app/AppView.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/",
-    name: "home",
-    component: HomeView,
+    path: "/auth",
+    name: "auth",
+    component: AuthView,
+    redirect: "/auth/login",
+    children: [
+      {
+        path: "login",
+        name: "auth-login",
+        meta: {
+          title: "IM - Login",
+        },
+        component: AuthLoginView,
+      },
+      {
+        path: "register",
+        name: "auth-register",
+        meta: {
+          title: "IM - Register",
+        },
+        component: AuthRegisterView,
+      },
+    ],
   },
   {
-    path: "/about",
-    name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+    path: "/app",
+    name: "app",
+    component: AppView,
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    redirect: "/auth",
   },
 ];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+});
+
+router.beforeEach((to: any) => {
+  document.title = to.meta?.title ?? "IM - Cards Marketplace";
 });
 
 export default router;
