@@ -1,9 +1,15 @@
 import { createStore } from "vuex";
 
 export default createStore({
-  state: {},
+  state: {
+    user: null,
+  },
   getters: {},
-  mutations: {},
+  mutations: {
+    storeUser(state, data) {
+      state.user = data;
+    },
+  },
   actions: {},
   modules: {},
 });
