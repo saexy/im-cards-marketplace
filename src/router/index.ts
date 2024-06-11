@@ -11,6 +11,7 @@ import AuthLoginView from "@/views/auth/AuthLoginView.vue";
 import AuthRegisterView from "@/views/auth/AuthRegisterView.vue";
 import AppView from "@/views/app/AppView.vue";
 import { http } from "@/utils/http";
+import AppHomeView from "@/views/app/AppHomeView.vue";
 
 const AuthGuard = async (
   to: RouteLocationNormalized,
@@ -80,6 +81,17 @@ const routes: Array<RouteRecordRaw> = [
     name: "app",
     beforeEnter: AuthGuard,
     component: AppView,
+    redirect: "/app/home",
+    children: [
+      {
+        path: "home",
+        name: "app-home",
+        meta: {
+          title: "IM - Página Inicial",
+        },
+        component: AppHomeView,
+      },
+    ],
   },
   {
     path: "/:pathMatch(.*)*",

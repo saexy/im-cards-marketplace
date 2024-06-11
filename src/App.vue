@@ -3,6 +3,8 @@
 </template>
 
 <style lang="scss">
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css");
+
 :root {
   --primary: #ff7235;
   --primary-extra: #db632f;
