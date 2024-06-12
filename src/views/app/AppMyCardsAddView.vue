@@ -8,12 +8,11 @@
       :multiple="true"
       optionKey="id"
     ></app-select>
-    <app-button type="submit">Adicionar</app-button>
+    <app-button type="submit" color="secondary">Adicionar</app-button>
   </form>
 </template>
 
 <script lang="ts" setup>
-import store from "@/store";
 import { convertEventToForm } from "@/utils/form";
 import { http } from "@/utils/http";
 

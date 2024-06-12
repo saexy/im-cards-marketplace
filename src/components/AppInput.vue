@@ -6,6 +6,7 @@
       :placeholder="placeholder"
       :name="name"
       :value="value"
+      :disabled="disabled"
       :required="required"
     />
   </div>
@@ -17,6 +18,7 @@ defineProps<{
   type?: string;
   name?: string;
   label?: string;
+  disabled?: boolean;
   placeholder?: string;
   value?: string;
   required?: boolean;
