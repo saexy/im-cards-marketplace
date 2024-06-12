@@ -18,7 +18,7 @@
       <i class="bi bi-person-vcard-fill"></i>
       Minhas cartas
     </router-link>
-    <router-link
+    <!-- <router-link
       class="app-sidebar-link"
       to="/app/my-cards"
       :class="{
@@ -37,7 +37,7 @@
     >
       <i class="bi bi-person-vcard-fill"></i>
       Trocas
-    </router-link>
+    </router-link> -->
   </div>
 </template>
 
@@ -48,7 +48,7 @@ import router from "@/router";
 <style scoped lang="scss">
 .app-sidebar {
   width: 250px;
-  height: calc(100vh - 50px);
+  min-height: calc(100vh - 50px);
   display: flex;
   flex-direction: column;
   background-color: var(--secondary);

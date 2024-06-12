@@ -4,6 +4,7 @@
 
 <style lang="scss">
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css");
+@import "vue-select/dist/vue-select.css";
 
 :root {
   --primary: #ff7235;

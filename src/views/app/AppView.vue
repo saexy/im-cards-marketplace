@@ -1,4 +1,5 @@
 <template>
+  <app-modal></app-modal>
   <div class="app">
     <app-header></app-header>
     <div class="app-container">
@@ -15,6 +16,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 
   &-container {
     width: 100%;
