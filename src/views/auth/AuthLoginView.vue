@@ -2,22 +2,22 @@
   <form class="app-auth-login" @submit.prevent="handleLogin">
     <div class="app-auth-login-title">Login</div>
     <div class="app-auth-login-inputs">
-      <AppInput
+      <app-input
         type="email"
         name="email"
         placeholder="email@email.com"
         label="Email:"
         :required="true"
-      ></AppInput>
-      <AppInput
+      ></app-input>
+      <app-input
         type="password"
         name="password"
         placeholder="******"
         label="Senha:"
         :required="true"
-      ></AppInput>
+      ></app-input>
     </div>
-    <AppButton size="md" color="primary" type="submit">Entrar</AppButton>
+    <app-button size="md" color="primary" type="submit">Entrar</app-button>
     <router-link to="/auth/register" class="app-auth-login-link">
       Não possui uma conta? Clique aqui para se registrar
     </router-link>
@@ -25,8 +25,6 @@
 </template>
 
 <script lang="ts" setup>
-import AppInput from "@/components/AppInput.vue";
-import AppButton from "@/components/AppButton.vue";
 import { convertEventToForm } from "@/utils/form";
 import { http } from "@/utils/http";
 

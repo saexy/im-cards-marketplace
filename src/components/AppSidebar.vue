@@ -8,6 +8,36 @@
       <i class="bi bi-house-fill"></i>
       Página inicial
     </router-link>
+    <router-link
+      class="app-sidebar-link"
+      to="/app/my-cards"
+      :class="{
+        active: router.currentRoute.value.fullPath === '/app/my-cards',
+      }"
+    >
+      <i class="bi bi-person-vcard-fill"></i>
+      Minhas cartas
+    </router-link>
+    <router-link
+      class="app-sidebar-link"
+      to="/app/my-cards"
+      :class="{
+        active: router.currentRoute.value.fullPath === '/app/my-cards',
+      }"
+    >
+      <i class="bi bi-person-vcard-fill"></i>
+      Trocas
+    </router-link>
+    <router-link
+      class="app-sidebar-link"
+      to="/app/my-cards"
+      :class="{
+        active: router.currentRoute.value.fullPath === '/app/my-cards',
+      }"
+    >
+      <i class="bi bi-person-vcard-fill"></i>
+      Trocas
+    </router-link>
   </div>
 </template>
 

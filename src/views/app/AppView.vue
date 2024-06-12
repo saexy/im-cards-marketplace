@@ -1,19 +1,14 @@
 <template>
   <div class="app">
-    <AppHeader></AppHeader>
+    <app-header></app-header>
     <div class="app-container">
-      <AppSidebar></AppSidebar>
+      <app-sidebar></app-sidebar>
       <div class="app-container-content">
         <router-view></router-view>
       </div>
     </div>
   </div>
 </template>
-
-<script lang="ts" setup>
-import AppHeader from "@/components/AppHeader.vue";
-import AppSidebar from "@/components/AppSidebar.vue";
-</script>
 
 <style lang="scss" scoped>
 .app {
