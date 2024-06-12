@@ -7,6 +7,12 @@
       </app-button>
     </div>
     <div class="app-my-cards-body">
+      <div class="app-my-cards-body-center" v-if="data.length <= 0 && !loading">
+        Nenhum item encontrado.
+      </div>
+      <div class="app-my-cards-body-center" v-if="loading">
+        <app-loading></app-loading>
+      </div>
       <div class="app-my-cards-body-card" v-for="card in data" :key="card.id">
         <img :src="card.imageUrl" alt="Imagem da carta" />
         <p>{{ card.name }}</p>
@@ -23,10 +29,17 @@ import store from "@/store";
 import AppMyCardsAddView from "./AppMyCardsAddView.vue";
 
 const data: Ref<Card[]> = ref([]);
+const loading: Ref<boolean> = ref(true);
 
 onMounted(async () => {
-  const response = await http.get("/me/cards");
-  data.value = response.data;
+  try {
+    const response = await http.get("/me/cards");
+    data.value = response.data;
+  } catch (error) {
+    console.log(error);
+  } finally {
+    loading.value = false;
+  }
 });
 
 const handleOpenAddCardsModal = () => {
@@ -62,6 +75,13 @@ const handleOpenAddCardsModal = () => {
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
+
+    &-center {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
 
     &-card {
       max-width: 100%;

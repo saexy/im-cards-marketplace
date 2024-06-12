@@ -9,6 +9,7 @@ import AppHeader from "./components/AppHeader.vue";
 import AppModal from "./components/AppModal.vue";
 import AppSelect from "./components/AppSelect.vue";
 import VueSelect from "vue-select";
+import AppLoading from "./components/AppLoading.vue";
 
 createApp(App)
   .use(store)
@@ -17,6 +18,7 @@ createApp(App)
   .component("app-sidebar", AppSidebar)
   .component("app-input", AppInput)
   .component("app-modal", AppModal)
+  .component("app-loading", AppLoading)
   .component("app-select", AppSelect)
   .component("app-header", AppHeader)
   .component("v-select", VueSelect)

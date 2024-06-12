@@ -18,26 +18,16 @@
       <i class="bi bi-person-vcard-fill"></i>
       Minhas cartas
     </router-link>
-    <!-- <router-link
-      class="app-sidebar-link"
-      to="/app/my-cards"
-      :class="{
-        active: router.currentRoute.value.fullPath === '/app/my-cards',
-      }"
-    >
-      <i class="bi bi-person-vcard-fill"></i>
-      Trocas
-    </router-link>
     <router-link
       class="app-sidebar-link"
-      to="/app/my-cards"
+      to="/app/my-account"
       :class="{
-        active: router.currentRoute.value.fullPath === '/app/my-cards',
+        active: router.currentRoute.value.fullPath === '/app/my-account',
       }"
     >
-      <i class="bi bi-person-vcard-fill"></i>
-      Trocas
-    </router-link> -->
+      <i class="bi bi-person-fill"></i>
+      Minha conta
+    </router-link>
   </div>
 </template>
 

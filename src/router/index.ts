@@ -13,6 +13,7 @@ import AppView from "@/views/app/AppView.vue";
 import { http } from "@/utils/http";
 import AppHomeView from "@/views/app/AppHomeView.vue";
 import AppMyCardsView from "@/views/app/AppMyCardsView.vue";
+import AppMyAccountView from "@/views/app/AppMyAccountView.vue";
 
 const AuthGuard = async (
   to: RouteLocationNormalized,
@@ -99,6 +100,14 @@ const routes: Array<RouteRecordRaw> = [
           title: "IM - Minhas Cartas",
         },
         component: AppMyCardsView,
+      },
+      {
+        path: "my-account",
+        name: "app-my-account",
+        meta: {
+          title: "IM - Minha Conta",
+        },
+        component: AppMyAccountView,
       },
     ],
   },
