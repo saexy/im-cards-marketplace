@@ -5,7 +5,7 @@
       Cards Marketplace
     </div>
     <div class="app-header-actions">
-      <router-link to="/app/account" class="app-header-actions-link">
+      <router-link to="/app/my-account" class="app-header-actions-link">
         <i class="bi bi-person-fill"></i>
       </router-link>
     </div>
