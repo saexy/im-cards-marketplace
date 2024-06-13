@@ -7,6 +7,7 @@
       optionLabel="name"
       :multiple="true"
       optionKey="id"
+      :required="true"
     ></app-select>
     <app-button type="submit" color="secondary">Adicionar</app-button>
   </form>

@@ -2,6 +2,7 @@
   <div class="app-button">
     <button
       :type="type ?? 'button'"
+      :disabled="disabled"
       :class="[size ? size : 'md', color ? color : 'primary']"
     >
       <slot></slot>
@@ -18,6 +19,7 @@ type ButtonColor = "primary" | "secondary" | "light" | "dark";
 defineProps<{
   type?: ButtonType;
   size?: ButtonSize;
+  disabled?: boolean;
   color?: ButtonColor;
 }>();
 </script>
@@ -28,6 +30,10 @@ defineProps<{
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+
+    &:disabled {
+      opacity: 0.5;
+    }
 
     &.sm {
       font-size: 16px;
